@@ -86,3 +86,24 @@ Completing the project involves several steps:
 6. Create a CodeBuild stage which will build, test, and deploy your code
 
 For more detail about each of these steps, see the project lesson.
+
+
+## Useful Scripts
+### Create Vitual Environment
+py -m venv .venv
+. .venv/Scripts/activate
+### Install requirements
+pip install -r requirements.txt
+
+cd 'c/users/kyle/onedrive/documents/my coding/udacity/full stack web dev/Projects/cd0157-Server-Deployment-and-Containerization'
+. .venv/Scripts/activate
+export LOG_LEVEL=DEBUG
+python main.py
+
+code main.py
+export LOG_LEVEL=DEBUG
+echo $LOG_LEVEL
+curl --request GET http://localhost:8080/
+export TOKEN=`curl --data '{"email":"kylesaacks@gmail.com","password":"mypwd"}' --header "Content-Type: application/json" -X POST localhost:8080/auth  | jq -r '.token'`
+echo $TOKEN
+curl --request GET 'http://localhost:8080/contents' -H "Authorization: Bearer ${TOKEN}" | jq .
