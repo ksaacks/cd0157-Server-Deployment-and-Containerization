@@ -10,6 +10,10 @@ data:
       - system:masters
       rolearn: arn:aws:iam::373658075177:role/UdacityFlaskDeployCBKubectlRole
       username: build
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::373658075177:role/myFSNDstack-CodeBuildServiceRole-oRW5ESJ6X5s6
+      username: build
 kind: ConfigMap
 metadata:
   creationTimestamp: "2026-11-19T08:48:47Z"
